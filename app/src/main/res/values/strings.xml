@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Pokimoni</string>
+
+    <string name="fragment_home_app_name"> Pokimoni</string>
+    <string name="fragment_home_button_capture">Gotta Catch \'Em All!</string>
+    <string name="fragment_home_button_pokedex">Open your Pokedex</string>
+    <string name="fragment_home_credits">© 2018&#8211;2019 Pokimoni\nEPITA 2019\nLouis Billaud / Vivian Chaizemartin\nNicolas Garnier / Farah Nedjadi</string>
 </resources>

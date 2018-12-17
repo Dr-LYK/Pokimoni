@@ -6,16 +6,71 @@
         android:id="@+id/fragment_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         tools:context=".ui.home.HomeFragment">
 
+    <ImageView
+            android:id="@+id/fragment_home_app_name"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/app_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+            android:id="@+id/fragment_home_button_capture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/colorButtonText"
+            android:background="@color/colorButtonBackground"
+            android:text="@string/fragment_home_button_capture"
+            android:fontFamily="@font/lato_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fragment_home_button_pokedex"/>
+
+    <Button
+            android:id="@+id/fragment_home_button_pokedex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/colorButtonText"
+            android:background="@color/colorButtonBackground"
+            android:text="@string/fragment_home_button_pokedex"
+            android:fontFamily="@font/lato_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
-            android:id="@+id/fragment_home_message"
+            android:id="@+id/fragment_home_credits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HomeFragment"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/fragment_home_credits"
+            android:fontFamily="@font/lato"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
