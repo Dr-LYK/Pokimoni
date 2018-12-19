@@ -45,3 +45,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+sceneform.asset('sampledata/035 Clefairy/Clefairy.obj', 'default', 'sampledata/035 Clefairy/Clefairy.sfa', 'src/main/assets/Clefairy')
+sceneform.asset('sampledata/041 Zubat/Zubat.obj', 'default', 'sampledata/041 Zubat/Zubat.sfa', 'src/main/assets/Zubat')
+sceneform.asset('sampledata/042 Golbat/Golbat.obj', 'default', 'sampledata/042 Golbat/Golbat.sfa', 'src/main/assets/Golbat')
+sceneform.asset('sampledata/060 Poliwag/Poliwag.obj', 'default', 'sampledata/060 Poliwag/Poliwag.sfa', 'src/main/assets/Poliwag')
+sceneform.asset('sampledata/143 Snorlax/Snorlax.obj', 'default', 'sampledata/143 Snorlax/Snorlax.sfa', 'src/main/assets/Snorlax')
