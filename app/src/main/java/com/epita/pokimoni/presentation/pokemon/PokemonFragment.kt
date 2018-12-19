@@ -1,4 +1,4 @@
-package com.epita.pokimoni.ui.pokemon
+package com.epita.pokimoni.presentation.pokemon
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle

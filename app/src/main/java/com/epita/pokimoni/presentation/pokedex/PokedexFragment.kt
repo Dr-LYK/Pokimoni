@@ -1,4 +1,4 @@
-package com.epita.pokimoni.ui.pokedex
+package com.epita.pokimoni.presentation.pokedex
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle

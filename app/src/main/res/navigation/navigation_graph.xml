@@ -5,7 +5,7 @@
             app:startDestination="@id/homeFragment">
 
     <fragment android:id="@+id/homeFragment"
-              android:name="com.epita.pokimoni.ui.home.HomeFragment"
+              android:name="com.epita.pokimoni.presentation.home.HomeFragment"
               android:label="fragment_home"
               tools:layout="@layout/fragment_home">
         <action android:id="@+id/action_homeFragment_to_captureFragment"
@@ -15,18 +15,18 @@
     </fragment>
 
     <fragment android:id="@+id/captureFragment"
-              android:name="com.epita.pokimoni.ui.capture.CaptureFragment"
+              android:name="com.epita.pokimoni.presentation.capture.CaptureFragment"
               android:label="fragment_capture"
               tools:layout="@layout/fragment_capture"/>
 
     <fragment android:id="@+id/pokedexFragment"
-              android:name="com.epita.pokimoni.ui.pokedex.PokedexFragment"
+              android:name="com.epita.pokimoni.presentation.pokedex.PokedexFragment"
               android:label="fragment_pokedex"
               tools:layout="@layout/fragment_pokedex">
         <action android:id="@+id/action_pokedexFragment_to_pokemonFragment"
                 app:destination="@id/pokemonFragment"/>
     </fragment>
 
-    <fragment android:id="@+id/pokemonFragment" android:name="com.epita.pokimoni.ui.pokemon.PokemonFragment"
+    <fragment android:id="@+id/pokemonFragment" android:name="com.epita.pokimoni.presentation.pokemon.PokemonFragment"
               android:label="fragment_pokemon" tools:layout="@layout/fragment_pokemon"/>
 </navigation>

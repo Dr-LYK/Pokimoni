@@ -6,7 +6,7 @@
         android:id="@+id/fragment_pokedex"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.pokedex.PokedexFragment">
+        tools:context=".presentation.pokedex.PokedexFragment">
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/fragment_pokedex_recycler_view"

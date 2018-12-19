@@ -1,4 +1,4 @@
-package com.epita.pokimoni.ui.home
+package com.epita.pokimoni.presentation.home
 
 import android.arch.lifecycle.ViewModel
 

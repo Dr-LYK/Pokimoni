@@ -1,4 +1,4 @@
-package com.epita.pokimoni.ui.pokedex
+package com.epita.pokimoni.presentation.pokedex
 
 class PokedexAdapter(private val dataset: Array<String>) {
 }

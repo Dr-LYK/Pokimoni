@@ -6,7 +6,7 @@
         android:id="@+id/fragment_capture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.capture.CaptureFragment">
+        tools:context=".presentation.capture.CaptureFragment">
 
     <TextView
             android:id="@+id/fragment_capture_message"
