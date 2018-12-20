@@ -1,9 +1,9 @@
-package com.epita.pokimoni.data
+package com.epita.pokimoni.repository
 
 import android.arch.lifecycle.LiveData
-import com.epita.pokimoni.Pokemon
-import com.epita.pokimoni.PokemonItem
-import com.epita.pokimoni.data.remote.WebServiceInterface
+import com.epita.pokimoni.model.Pokemon
+import com.epita.pokimoni.model.PokemonItem
+import com.epita.pokimoni.api.WebServiceInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

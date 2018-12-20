@@ -1,4 +1,4 @@
-package com.epita.pokimoni.presentation.capture
+package com.epita.pokimoni.ui.capture
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle

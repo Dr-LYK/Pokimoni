@@ -6,7 +6,7 @@
         android:id="@+id/fragment_pokemon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.pokemon.PokemonFragment">
+        tools:context=".ui.pokemon.PokemonFragment">
 
     <TextView
             android:id="@+id/fragment_pokemon_message"

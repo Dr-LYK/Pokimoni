@@ -1,4 +1,4 @@
-package com.epita.pokimoni
+package com.epita.pokimoni.model
 
 enum class TypeColor(val typeName: String, val color: Int, val border: Int) {
     FIGHTING("fighting", 0xBE322E, 0x7C201D),

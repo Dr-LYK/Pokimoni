@@ -28,6 +28,8 @@ android {
 dependencies {
     def navigation_version = "1.0.0-alpha08"
 
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
@@ -39,6 +41,8 @@ dependencies {
     implementation 'com.google.ar:core:1.6.0'
     implementation 'com.google.ar.sceneform:core:1.6.0'
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
+    implementation 'com.google.dagger:dagger-android:2.15'
+    implementation 'com.google.dagger:dagger-android-support:2.15'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
