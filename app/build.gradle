@@ -26,7 +26,8 @@ android {
 }
 
 dependencies {
-    def navigation_version = "1.0.0-alpha08"
+    def navigation_version = "1.0.0-alpha09"
+    def navigation_test_version = "1.0.0-alpha08"
 
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
@@ -47,7 +48,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation "android.arch.navigation:navigation-testing:$navigation_version"
+    androidTestImplementation "android.arch.navigation:navigation-testing:$navigation_test_version"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
