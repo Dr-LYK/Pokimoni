@@ -19,6 +19,4 @@ interface PokemonDataDao {
 
     @Update(onConflict = OnConflictStrategy.ABORT)
     fun update(pokemonData: PokemonData)
-
-    @Delete
 }
