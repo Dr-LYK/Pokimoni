@@ -28,5 +28,4 @@ class CaptureFragment : ArFragment() {
         viewModel = ViewModelProviders.of(this).get(CaptureViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }

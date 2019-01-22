@@ -2,6 +2,7 @@ package com.epita.pokimoni.room
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "pokemonData")
@@ -13,5 +14,6 @@ data class PokemonData(@PrimaryKey(autoGenerate = true)
                        @ColumnInfo(name = "type2") var type2: String,
                        @ColumnInfo(name = "count") var count: Int) {
 
+    @Ignore
     constructor(): this(null, 0, "", "", "", 0)
 }
