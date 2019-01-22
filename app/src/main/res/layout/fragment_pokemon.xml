@@ -9,11 +9,12 @@
     android:background="@drawable/background"
     tools:context=".ui.pokemon.PokemonFragment">
 
-    <android.support.v7.widget.AppCompatImageView
+    <ImageView
         android:id="@+id/fragment_pokemon_sprite"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_margin="50dp"
+        android:contentDescription="@string/fragment_pokemon_sprite"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -126,6 +127,17 @@
         android:textColor="@color/colorTextLight"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/fragment_pokemon_description_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/fragment_pokemon_button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@mipmap/cancel"
+        android:contentDescription="@string/fragment_pokemon_button_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 </android.support.constraint.ConstraintLayout>
