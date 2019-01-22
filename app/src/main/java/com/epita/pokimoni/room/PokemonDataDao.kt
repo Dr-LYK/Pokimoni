@@ -17,6 +17,12 @@ interface PokemonDataDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(pokemonData: PokemonData)
 
-    @Update(onConflict = OnConflictStrategy.ABORT)
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(pokemonData: PokemonData)
+
+    @Delete
+    fun delete(pokemonData: PokemonData)
+
+    @Query("DELETE FROM pokemonData")
+    fun deleteAll()
 }
