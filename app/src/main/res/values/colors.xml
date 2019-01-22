@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorButtonText">#FFFFFF</color>
     <color name="colorButtonBackground">#FDB668</color>
+    <color name="colorTextStandard">#333333</color>
+    <color name="colorTextLight">#555555</color>
 </resources>

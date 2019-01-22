@@ -5,4 +5,13 @@
     <string name="fragment_home_button_capture">Gotta Catch \'Em All!</string>
     <string name="fragment_home_button_pokedex">Open your Pokedex</string>
     <string name="fragment_home_credits">© 2018&#8211;2019 Pokimoni\nEPITA 2019\nLouis Billaud / Vivian Chaizemartin\nNicolas Garnier / Farah Nedjadi</string>
+
+    <string name="fragment_pokemon_index_name"> 001 Bulbizarre</string>
+    <string name="fragment_pokemon_counter">Caught : 3</string>
+    <string name="fragment_pokemon_weight">WEIGHT : 6.9 kg</string>
+    <string name="fragment_pokemon_height">HEIGHT : 0.7 m</string>
+    <string name="fragment_pokemon_type1">Plante</string>
+    <string name="fragment_pokemon_type2">Poison</string>
+    <string name="fragment_pokemon_description_label">Description</string>
+    <string name="fragment_pokemon_description">Bulbizarre passe son temps à faire la sieste sous le soleil. Il y a une graine sur son dos. Il absorbe les rayons du soleil pour faire doucement pousser la graine.</string>
 </resources>
