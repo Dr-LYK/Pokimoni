@@ -8,14 +8,30 @@
         android:layout_height="match_parent"
         tools:context=".ui.pokedex.PokedexFragment">
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/fragment_pokedex_recycler_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scrollbars="vertical"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <ListView
+        android:id="@+id/fragment_pokedex_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:dividerHeight="10dp"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true">
+    </ListView>
+
+    <ImageView
+        android:id="@+id/fragment_pokedex_button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@mipmap/back"
+        android:contentDescription="@string/fragment_pokedex_button_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

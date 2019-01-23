@@ -5,6 +5,7 @@ import com.epita.pokimoni.model.Pokemon
 import com.epita.pokimoni.model.PokemonItem
 import com.epita.pokimoni.api.WebServiceInterface
 import com.epita.pokimoni.room.PokemonDataBase
+import com.epita.pokimoni.util.WorkerThread
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

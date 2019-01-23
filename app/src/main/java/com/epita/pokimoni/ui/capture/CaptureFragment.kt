@@ -75,8 +75,6 @@ class CaptureFragment : Fragment(), View.OnClickListener {
                     pokemon.renderable = pokemonRenderable
                     pokemon.select()
 
-                    viewModel.savePokemon()
-
                     val handler = Handler()
                     val r = Runnable {
                         viewModel.setInformation(resources.getString(R.string.fragment_capture_information_step4))
@@ -94,9 +92,12 @@ class CaptureFragment : Fragment(), View.OnClickListener {
             informationTextView.text = information
         })
 
-        viewModel.getPokemon().observe(this, Observer<PokemonItem> { _ ->
-            Toast.makeText(activity, "youpi", Toast.LENGTH_LONG).show()
+        viewModel.getPokemon().observe(this, Observer<PokemonItem> { pokemon ->
+            if (pokemon != null) {
+                viewModel.savePokemon()
+            }
         })
+
 
         buttonCancel.setOnClickListener(this@CaptureFragment)
     }

@@ -13,7 +13,7 @@ class CaptureViewModel() : ViewModel() {
     private val repository = PokemonRepository()
     private lateinit var information: MutableLiveData<String>
     private lateinit var file: MutableLiveData<String>
-    private lateinit var pokemon: MutableLiveData<PokemonItem>
+    private lateinit var pokemon: LiveData<PokemonItem>
 
     fun getInformation(): LiveData<String> {
         if (!::information.isInitialized) {
@@ -46,7 +46,7 @@ class CaptureViewModel() : ViewModel() {
 
     private fun fetchPokemon() {
         if (!::file.isInitialized) {
-            repository.getPokemonItem(Utils.FileToIndex(file.value!!))
+            pokemon = repository.getPokemonItem(Utils.fileToIndex(file.value!!))
         }
     }
 

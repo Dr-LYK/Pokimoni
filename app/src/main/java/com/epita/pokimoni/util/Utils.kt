@@ -36,7 +36,7 @@ class Utils {
             }
         }
 
-        fun StringToTypeColor(string: String): TypeColor? {
+        fun stringToTypeColor(string: String?): TypeColor? {
             when (string) {
                 "fighting" -> return TypeColor.FIGHTING
                 "dragon" -> return TypeColor.DRAGON
@@ -53,11 +53,11 @@ class Utils {
                 "ground" -> return TypeColor.GROUND
                 "ghost" -> return TypeColor.GHOST
                 "flying" -> return TypeColor.FLYING
+                else -> return null
             }
-            return null
         }
 
-        fun FileToIndex(file: String): Int {
+        fun fileToIndex(file: String): Int {
             return file.substring(0, 3).toInt()
         }
     }

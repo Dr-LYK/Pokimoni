@@ -11,7 +11,7 @@ interface PokemonDataDao {
     @Query("SELECT * FROM pokemonData WHERE `name` == :name")
     fun getByName(name: String): PokemonData?
 
-    @Query("SELECT * FROM pokemonData")
+    @Query("SELECT * FROM pokemonData ORDER BY `index` ASC")
     fun getAll(): List<PokemonData>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
