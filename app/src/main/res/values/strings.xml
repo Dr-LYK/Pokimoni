@@ -6,8 +6,19 @@
     <string name="fragment_home_button_pokedex">Open your Pokedex</string>
     <string name="fragment_home_credits">© 2018&#8211;2019 Pokimoni\nEPITA 2019\nLouis Billaud / Vivian Chaizemartin\nNicolas Garnier / Farah Nedjadi</string>
 
+    <string name="fragment_capture_information_step1">Move your mobile phone to find a plane surface around you.</string>
+    <string name="fragment_capture_information_step2">Get ready, the Pokémon is not so far ! Press the plane surface to make it appears&#8230;</string>
+    <string name="fragment_capture_information_step3">Here it is ! You can play with the Pokémon for 5 seconds while the capture proceeds.</string>
+    <string name="fragment_capture_information_step4">Well done, you have caught a new Pokémon !</string>
+
+    <string name="fragment_pokedex_cell_index">001</string>
+    <string name="fragment_pokedex_cell_name">Bulbasaur</string>
+    <string name="fragment_pokedex_cell_type1">Grass</string>
+    <string name="fragment_pokedex_cell_type2">Poison</string>
+    <string name="fragment_pokedex_cell_counter">(caught : 3)</string>
+
     <string name="fragment_pokemon_sprite">Sprite</string>
-    <string name="fragment_pokemon_index_name"> 001 Bulbizarre</string>
+    <string name="fragment_pokemon_index_name"> 001 Bulbasaur</string>
     <string name="fragment_pokemon_counter">Caught : 3</string>
     <string name="fragment_pokemon_weight">WEIGHT : 6.9 kg</string>
     <string name="fragment_pokemon_height">HEIGHT : 0.7 m</string>

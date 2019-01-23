@@ -1,7 +1,7 @@
 {
   materials: [
     {
-      name: 'BodyA00',
+      name: 'Material #22',
       parameters: [
         {
           baseColor: null,
@@ -27,59 +27,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'LIris',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'Eye',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'BodyB01',
+      name: 'Material #23',
       parameters: [
         {
           baseColor: null,
@@ -108,17 +56,16 @@
   model: {
     attributes: [
       'Position',
-      'Color',
       'TexCoord',
       'Orientation',
       'BoneIndices',
       'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/017 Pidgeotto/Pidgeotto.FBX',
-    name: 'Pidgeotto',
+    file: 'sampledata/023 Ekans/Ekans.FBX',
+    name: 'Ekans',
     recenter: 'root',
-    scale: 0.0034719999999999998,
+    scale: 0.035129000000000001,
   },
   version: '0.54:1',
 }

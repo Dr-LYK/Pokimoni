@@ -2,11 +2,17 @@ package com.epita.pokimoni.repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.arch.persistence.room.Room
 import com.epita.pokimoni.model.Pokemon
 import com.epita.pokimoni.model.PokemonItem
 import com.epita.pokimoni.api.WebServiceInterface
 import com.epita.pokimoni.api.model.PokemonJsonModel
+import com.epita.pokimoni.model.TypeColor
+import com.epita.pokimoni.room.PokemonData
+import com.epita.pokimoni.room.PokemonDataBase
+import com.epita.pokimoni.util.GlobalApplication
 import com.epita.pokimoni.util.STRING_API_BASE_URL
+import com.epita.pokimoni.util.Utils
 import com.google.gson.GsonBuilder
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -23,8 +29,9 @@ class PokemonRepository @Inject constructor(): PokemonRepositoryInterface {
     override val jsonConverter: GsonConverterFactory = GsonConverterFactory.create(GsonBuilder().create())
     override val retrofit: Retrofit = Retrofit.Builder().baseUrl(baseURL).addConverterFactory(jsonConverter).build()
     override val service: WebServiceInterface = retrofit.create(WebServiceInterface::class.java)
+    override val database: PokemonDataBase = Room.databaseBuilder(GlobalApplication.appContext!!, PokemonDataBase::class.java, "pokemon.db").build()
 
-    override fun getPokemonById(id: Int): LiveData<Pokemon> {
+    override fun getPokemon(id: Int): LiveData<Pokemon> {
         val data: MutableLiveData<Pokemon> = MutableLiveData()
         val call: Call<PokemonJsonModel> = service.getPokemon(id)
 
@@ -38,18 +45,63 @@ class PokemonRepository @Inject constructor(): PokemonRepositoryInterface {
         return data
     }
 
-    override fun getPokemonByName(name: String): LiveData<PokemonItem> {
+    override fun getPokemonItem(id: Int): LiveData<PokemonItem> {
         val data: MutableLiveData<PokemonItem> = MutableLiveData()
-        val call: Call<PokemonJsonModel> = service.getPokemon(name)
+        val call: Call<PokemonJsonModel> = service.getPokemon(id)
 
         call.enqueue(object: Callback<PokemonJsonModel> {
 
             override fun onResponse(call: Call<PokemonJsonModel>, response: Response<PokemonJsonModel>) {
+                val pokemonJsonModel: PokemonJsonModel? = response.body()
+                var type1: TypeColor? = null
+                var type2: TypeColor? = null
+
+                if (pokemonJsonModel != null) {
+                    if (pokemonJsonModel.types != null) {
+                        if (pokemonJsonModel.types.size == 1) {
+                            type1 = Utils.StringToTypeColor(pokemonJsonModel.types[0].type!!.name!!)
+                            type2 = null
+                        }
+                        else if (pokemonJsonModel.types.size == 2) {
+                            type1 = Utils.StringToTypeColor(pokemonJsonModel.types[0].type!!.name!!)
+                            type2 = Utils.StringToTypeColor(pokemonJsonModel.types[1].type!!.name!!)
+                        }
+                    }
+                    val pokemonItem = PokemonItem(pokemonJsonModel.id!!,pokemonJsonModel.name!!, type1!!, type2, 1)
+                    data.value = pokemonItem
+                }
             }
 
             override fun onFailure(call: Call<PokemonJsonModel>, t: Throwable) {
             }
         })
         return data
+    }
+
+    override fun insertPokemonItem(pokemonItem: PokemonItem) {
+        val storedPokemon: PokemonData? = database.pokemonDataDao().getByIndex(pokemonItem.id)
+        val newPokemon = PokemonData(
+            0,
+            pokemonItem.id,
+            pokemonItem.name.toLowerCase(),
+            pokemonItem.type1.typeName,
+            pokemonItem.type2?.typeName,
+            pokemonItem.count)
+
+        if (storedPokemon == null) {
+            database.pokemonDataDao().insert(newPokemon)
+        }
+        else {
+            storedPokemon.count += 1
+            database.pokemonDataDao().update(storedPokemon)
+        }
+    }
+
+    override fun getPokedex(): LiveData<List<PokemonItem>> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun deletePokedex() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

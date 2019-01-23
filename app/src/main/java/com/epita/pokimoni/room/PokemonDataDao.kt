@@ -6,13 +6,13 @@ import android.arch.persistence.room.*
 interface PokemonDataDao {
 
     @Query("SELECT * FROM pokemonData WHERE `index` == :index")
-    fun getByIndex(index: Int): PokemonData
+    fun getByIndex(index: Int): PokemonData?
 
     @Query("SELECT * FROM pokemonData WHERE `name` == :name")
-    fun getByName(name: String): PokemonData
+    fun getByName(name: String): PokemonData?
 
     @Query("SELECT * FROM pokemonData")
-    fun getAll(): List<PokemonData>
+    fun getAll(): List<PokemonData>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(pokemonData: PokemonData)

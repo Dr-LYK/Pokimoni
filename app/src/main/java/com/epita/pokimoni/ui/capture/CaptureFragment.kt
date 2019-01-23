@@ -1,28 +1,34 @@
 package com.epita.pokimoni.ui.capture
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
+import android.widget.TextView
 import android.widget.Toast
-import com.epita.pokimoni.MainActivity
-import com.epita.pokimoni.R
 import com.google.ar.core.Anchor
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
+import android.os.Handler
+import android.widget.ImageView
+import androidx.navigation.findNavController
+import com.epita.pokimoni.R
+import com.epita.pokimoni.model.PokemonItem
 
-private val TAG = MainActivity::class.java.simpleName
-private const val MIN_OPENGL_VERSION = 3.0
-
-class CaptureFragment : Fragment() {
+class CaptureFragment : Fragment(), View.OnClickListener {
 
     companion object {
         fun newInstance() = CaptureFragment()
     }
 
+
+
+    private lateinit var informationTextView: TextView
+    private lateinit var buttonCancel: ImageView
     private lateinit var arFragment: ArFragment
     private lateinit var pokemonRenderable: ModelRenderable
     private lateinit var viewModel: CaptureViewModel
@@ -31,38 +37,76 @@ class CaptureFragment : Fragment() {
         return inflater.inflate(com.epita.pokimoni.R.layout.fragment_capture, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(CaptureViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(CaptureViewModel::class.java)
 
+        informationTextView = view.findViewById(R.id.fragment_capture_information_step)
+        buttonCancel = view.findViewById(R.id.fragment_capture_button_cancel)
         arFragment = childFragmentManager.findFragmentById(R.id.fragment_capture_ar) as ArFragment
 
-        ModelRenderable.builder()
-            .setSource(activity, Uri.parse("001.sfb"))
-            .build()
-            .thenAccept { renderable -> pokemonRenderable = renderable }
-            .exceptionally {
-                val toast = Toast.makeText(activity, "Unable to load Pokémon renderable", Toast.LENGTH_LONG)
-                toast.setGravity(Gravity.CENTER, 0, 0)
-                toast.show()
-                null
+        viewModel.setInformation(resources.getString(R.string.fragment_capture_information_step1))
+
+        viewModel.getFile().observe(this, Observer<String> { file ->
+            ModelRenderable.builder()
+                .setSource(activity, Uri.parse(file))
+                .build()
+                .thenAccept { renderable -> pokemonRenderable = renderable }
+                .exceptionally {
+                    val toast = Toast.makeText(activity, "Unable to load Pokémon renderable", Toast.LENGTH_LONG)
+                    toast.setGravity(Gravity.CENTER, 0, 0)
+                    toast.show()
+                    null
+                }
+
+            if (arFragment.arSceneView.planeRenderer.isEnabled) {
+                viewModel.setInformation(resources.getString(R.string.fragment_capture_information_step2))
             }
 
-        arFragment.setOnTapArPlaneListener { hitResult, _, _ ->
-            if (::pokemonRenderable.isInitialized) {
-                val anchor: Anchor = hitResult.createAnchor()
-                val anchorNode = AnchorNode(anchor)
-                anchorNode.setParent(arFragment.arSceneView.scene)
+            arFragment.setOnTapArPlaneListener { hitResult, _, _ ->
+                if (::pokemonRenderable.isInitialized) {
+                    viewModel.setInformation(resources.getString(R.string.fragment_capture_information_step3))
+                    val anchor: Anchor = hitResult.createAnchor()
+                    val anchorNode = AnchorNode(anchor)
+                    anchorNode.setParent(arFragment.arSceneView.scene)
 
-                val pokemon = TransformableNode(arFragment.transformationSystem)
-                pokemon.setParent(anchorNode)
-                pokemon.renderable = pokemonRenderable
-                pokemon.select()
+                    val pokemon = TransformableNode(arFragment.transformationSystem)
+                    pokemon.setParent(anchorNode)
+                    pokemon.renderable = pokemonRenderable
+                    pokemon.select()
+
+                    viewModel.savePokemon()
+
+                    val handler = Handler()
+                    val r = Runnable {
+                        viewModel.setInformation(resources.getString(R.string.fragment_capture_information_step4))
+                        val r = Runnable {
+                            view.findNavController().navigate(com.epita.pokimoni.R.id.homeFragment)
+                        }
+                        handler.postDelayed(r, 2000)
+                    }
+                    handler.postDelayed(r, 5000)
+                }
+            }
+        })
+
+        viewModel.getInformation().observe(this, Observer<String> { information ->
+            informationTextView.text = information
+        })
+
+        viewModel.getPokemon().observe(this, Observer<PokemonItem> { _ ->
+            Toast.makeText(activity, "youpi", Toast.LENGTH_LONG).show()
+        })
+
+        buttonCancel.setOnClickListener(this@CaptureFragment)
+    }
+
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when (v.id) {
+                R.id.fragment_capture_button_cancel -> {
+                    view?.findNavController()?.navigate(com.epita.pokimoni.R.id.homeFragment)
+                }
             }
         }
     }

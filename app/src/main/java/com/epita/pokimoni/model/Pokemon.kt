@@ -9,4 +9,5 @@ class Pokemon constructor(var id: Int,
                           var type1: TypeColor,
                           var type2: TypeColor,
                           var description: String,
-                          var picture: Bitmap)
+                          var picture: Bitmap,
+                          var count: Int)

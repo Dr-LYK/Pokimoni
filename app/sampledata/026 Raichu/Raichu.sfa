@@ -1,7 +1,7 @@
 {
   materials: [
     {
-      name: 'BodyA00',
+      name: 'Material #146',
       parameters: [
         {
           baseColor: null,
@@ -27,7 +27,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'LIris',
+      name: 'Material #147',
       parameters: [
         {
           baseColor: null,
@@ -53,7 +53,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'Eye',
+      name: 'Material #148',
       parameters: [
         {
           baseColor: null,
@@ -79,7 +79,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'BodyB01',
+      name: 'Material #149',
       parameters: [
         {
           baseColor: null,
@@ -108,17 +108,16 @@
   model: {
     attributes: [
       'Position',
-      'Color',
       'TexCoord',
       'Orientation',
       'BoneIndices',
       'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/017 Pidgeotto/Pidgeotto.FBX',
-    name: 'Pidgeotto',
+    file: 'sampledata/026 Raichu/Raichu.FBX',
+    name: 'Raichu',
     recenter: 'root',
-    scale: 0.0034719999999999998,
+    scale: 0.0073569999999999998,
   },
   version: '0.54:1',
 }

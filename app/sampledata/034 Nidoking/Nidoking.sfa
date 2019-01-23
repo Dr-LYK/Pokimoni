@@ -1,7 +1,7 @@
 {
   materials: [
     {
-      name: 'BodyA00',
+      name: 'Material #164',
       parameters: [
         {
           baseColor: null,
@@ -27,7 +27,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'LIris',
+      name: 'Material #165',
       parameters: [
         {
           baseColor: null,
@@ -53,33 +53,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'Eye',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'BodyB01',
+      name: 'Material #166',
       parameters: [
         {
           baseColor: null,
@@ -108,17 +82,16 @@
   model: {
     attributes: [
       'Position',
-      'Color',
       'TexCoord',
       'Orientation',
       'BoneIndices',
       'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/017 Pidgeotto/Pidgeotto.FBX',
-    name: 'Pidgeotto',
+    file: 'sampledata/034 Nidoking/Nidoking.FBX',
+    name: 'Nidoking',
     recenter: 'root',
-    scale: 0.0034719999999999998,
+    scale: 0.0028379999999999998,
   },
   version: '0.54:1',
 }

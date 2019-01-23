@@ -1,33 +1,7 @@
 {
   materials: [
     {
-      name: 'BodyA00',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'LIris',
+      name: 'Body00',
       parameters: [
         {
           baseColor: null,
@@ -79,7 +53,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'BodyB01',
+      name: 'RIris',
       parameters: [
         {
           baseColor: null,
@@ -115,10 +89,10 @@
       'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/017 Pidgeotto/Pidgeotto.FBX',
-    name: 'Pidgeotto',
+    file: 'sampledata/019 Rattata/Rattata.FBX',
+    name: 'Rattata',
     recenter: 'root',
-    scale: 0.0034719999999999998,
+    scale: 0.012799,
   },
   version: '0.54:1',
 }

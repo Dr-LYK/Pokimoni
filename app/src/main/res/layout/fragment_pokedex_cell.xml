@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="10dp"
+    android:background="@android:color/white"
+    tools:ignore="UnusedAttribute">
+
+    <TextView
+        android:id="@+id/fragment_pokedex_cell_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/fragment_pokedex_cell_index"
+        android:fontFamily="@font/lato"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextStandard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/fragment_pokedex_cell_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/fragment_pokedex_cell_name"
+        android:fontFamily="@font/lato"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextStandard"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_pokedex_cell_id"/>
+
+    <TextView
+        android:id="@+id/fragment_pokedex_cell_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/fragment_pokedex_cell_counter"
+        android:fontFamily="@font/lato"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextStandard"
+        app:layout_constraintStart_toEndOf="@id/fragment_pokedex_cell_name"
+        app:layout_constraintTop_toBottomOf="@id/fragment_pokedex_cell_id"/>
+
+    <TextView
+        android:id="@+id/fragment_pokedex_cell_type1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/fragment_pokedex_cell_type1"
+        android:fontFamily="@font/lato"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextStandard"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/fragment_pokedex_cell_type2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/fragment_pokedex_cell_type2"
+        android:fontFamily="@font/lato"
+        android:textSize="16sp"
+        android:textColor="@color/colorTextStandard"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_pokedex_cell_type1"/>
+
+
+</android.support.constraint.ConstraintLayout>

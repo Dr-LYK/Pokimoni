@@ -1,7 +1,7 @@
 {
   materials: [
     {
-      name: 'BodyA00',
+      name: 'Material #160',
       parameters: [
         {
           baseColor: null,
@@ -27,7 +27,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'LIris',
+      name: 'Material #161',
       parameters: [
         {
           baseColor: null,
@@ -53,7 +53,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'Eye',
+      name: 'Material #162',
       parameters: [
         {
           baseColor: null,
@@ -79,7 +79,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'BodyB01',
+      name: 'Material #163',
       parameters: [
         {
           baseColor: null,
@@ -108,17 +108,16 @@
   model: {
     attributes: [
       'Position',
-      'Color',
       'TexCoord',
       'Orientation',
       'BoneIndices',
       'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/017 Pidgeotto/Pidgeotto.FBX',
-    name: 'Pidgeotto',
+    file: 'sampledata/025 Pikachu/Pikachu.FBX',
+    name: 'Pikachu',
     recenter: 'root',
-    scale: 0.0034719999999999998,
+    scale: 0.011549,
   },
   version: '0.54:1',
 }

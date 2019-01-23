@@ -1,7 +1,7 @@
 {
   materials: [
     {
-      name: 'BodyA00',
+      name: 'BodyA',
       parameters: [
         {
           baseColor: null,
@@ -27,7 +27,7 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'LIris',
+      name: 'BodyB',
       parameters: [
         {
           baseColor: null,
@@ -78,32 +78,6 @@
       ],
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
-    {
-      name: 'BodyB01',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            1,
-            1,
-            1,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
   ],
   model: {
     attributes: [
@@ -115,10 +89,10 @@
       'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/017 Pidgeotto/Pidgeotto.FBX',
-    name: 'Pidgeotto',
+    file: 'sampledata/022 Fearow/Fearow.FBX',
+    name: 'Fearow',
     recenter: 'root',
-    scale: 0.0034719999999999998,
+    scale: 0.0048399999999999997,
   },
   version: '0.54:1',
 }
