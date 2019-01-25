@@ -21,12 +21,6 @@ import com.epita.pokimoni.model.PokemonItem
 
 class CaptureFragment : Fragment(), View.OnClickListener {
 
-    companion object {
-        fun newInstance() = CaptureFragment()
-    }
-
-
-
     private lateinit var informationTextView: TextView
     private lateinit var buttonCancel: ImageView
     private lateinit var arFragment: ArFragment
