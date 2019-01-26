@@ -14,6 +14,7 @@ import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import android.os.Handler
+import android.widget.Button
 import android.widget.ImageView
 import androidx.navigation.findNavController
 import com.epita.pokimoni.R
@@ -23,8 +24,9 @@ class CaptureFragment : Fragment(), View.OnClickListener {
 
     private lateinit var informationTextView: TextView
     private lateinit var buttonCancel: ImageView
-    private lateinit var arFragment: ArFragment
-    private lateinit var pokemonRenderable: ModelRenderable
+    private lateinit var buttonCapture: Button
+    //private lateinit var arFragment: ArFragment
+    //private lateinit var pokemonRenderable: ModelRenderable
     private lateinit var viewModel: CaptureViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -37,11 +39,10 @@ class CaptureFragment : Fragment(), View.OnClickListener {
 
         informationTextView = view.findViewById(R.id.fragment_capture_information_step)
         buttonCancel = view.findViewById(R.id.fragment_capture_button_cancel)
-        arFragment = childFragmentManager.findFragmentById(R.id.fragment_capture_ar) as ArFragment
+        buttonCapture = view.findViewById(R.id.fragment_capture_button_capture)
+        //arFragment = childFragmentManager.findFragmentById(R.id.fragment_capture_ar) as ArFragment
 
-        viewModel.setInformation(resources.getString(R.string.fragment_capture_information_step1))
-
-        viewModel.getFile().observe(this, Observer<String> { file ->
+        /*viewModel.getFile().observe(this, Observer<String> { file ->
             ModelRenderable.builder()
                 .setSource(activity, Uri.parse(file))
                 .build()
@@ -80,25 +81,35 @@ class CaptureFragment : Fragment(), View.OnClickListener {
                     handler.postDelayed(r, 5000)
                 }
             }
-        })
+        })*/
 
         viewModel.getInformation().observe(this, Observer<String> { information ->
             informationTextView.text = information
         })
 
-        viewModel.getPokemon().observe(this, Observer<PokemonItem> { pokemon ->
-            if (pokemon != null) {
-                viewModel.savePokemon()
+        viewModel.getFile().observe(this, Observer<String>{ file ->
+            if (file != null) {
+                viewModel.getPokemon()
             }
         })
 
+        viewModel.getPokemon().observe(this, Observer<PokemonItem> { pokemon ->
+            if (pokemon != null) {
+                buttonCapture.isClickable = true
+            }
+        })
 
+        buttonCapture.setOnClickListener(this@CaptureFragment)
         buttonCancel.setOnClickListener(this@CaptureFragment)
     }
 
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
+                R.id.fragment_capture_button_capture -> {
+                        viewModel.savePokemon()
+                }
+
                 R.id.fragment_capture_button_cancel -> {
                     view?.findNavController()?.navigate(com.epita.pokimoni.R.id.homeFragment)
                 }
