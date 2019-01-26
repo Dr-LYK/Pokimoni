@@ -54,7 +54,7 @@ class PokemonRepository @Inject constructor(): PokemonRepositoryInterface {
         val data: MutableLiveData<PokemonItem> = MutableLiveData()
         val call: Call<PokemonJsonModel> = service.getPokemon(id)
 
-        val callback = object: Callback<PokemonJsonModel> {
+        call.enqueue(object: Callback<PokemonJsonModel> {
 
             override fun onResponse(call: Call<PokemonJsonModel>, response: Response<PokemonJsonModel>) {
                 val pokemonJsonModel: PokemonJsonModel? = response.body()
@@ -79,9 +79,7 @@ class PokemonRepository @Inject constructor(): PokemonRepositoryInterface {
 
             override fun onFailure(call: Call<PokemonJsonModel>, t: Throwable) {
             }
-        }
-
-        call.enqueue(callback)
+        })
         return data
     }
 

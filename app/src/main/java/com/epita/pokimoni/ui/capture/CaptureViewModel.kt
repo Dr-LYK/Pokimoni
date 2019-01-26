@@ -22,7 +22,7 @@ class CaptureViewModel() : ViewModel() {
         return information
     }
 
-    fun setInformation(str: String?) {
+    fun setInformation(str: String) {
         if (::information.isInitialized) {
             information.value = str
         }
@@ -45,7 +45,7 @@ class CaptureViewModel() : ViewModel() {
     }
 
     private fun fetchPokemon() {
-        if (::file.isInitialized) {
+        if (!::file.isInitialized) {
             pokemon = repository.getPokemonItem(Utils.fileToIndex(file.value!!))
         }
     }
