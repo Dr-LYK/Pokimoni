@@ -78,6 +78,7 @@ class PokemonRepository @Inject constructor(): PokemonRepositoryInterface {
             }
 
             override fun onFailure(call: Call<PokemonJsonModel>, t: Throwable) {
+                Log.d
             }
         }
 
